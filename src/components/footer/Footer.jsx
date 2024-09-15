@@ -53,35 +53,35 @@ const Footer = () => {
         </div>
         <p>&copy; 2024 Your Company. All rights reserved.</p>
         <div className={styles.socialMedia}>
-          <Link
+          <a
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src="./facebook.png" alt="" height={"30px"} width={"30px"} />
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://www.linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src="./linkedin.png" alt="" height={"30px"} width={"30px"} />
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://www.youtube.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src="./youtube.png" alt="" height={"30px"} width={"30px"} />
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
             <img src="./instagram.png" alt="" height={"30px"} width={"30px"} />
-          </Link>
-          <Link
+          </a>
+          <a
             href="https://www.github.com"
             target="_blank"
             rel="noopener noreferrer"
@@ -94,7 +94,7 @@ const Footer = () => {
               width={"30px"}
               className={styles.github}
             />
-          </Link>
+          </a>
         </div>
       </div>
     </footer>
