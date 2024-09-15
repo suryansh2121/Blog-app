@@ -33,7 +33,7 @@ const Featured = async () => {
       {/* Featured Post Section */}
       <div className={styles.movablePost}>
         <div className={styles.imageContainer}>
-          <img src={featuredPost?.img || "./k.jpg"} alt={featuredPost?.title} className={styles.image} />
+          <Image src={featuredPost?.img || "./k.jpg"} alt={featuredPost?.title} className={styles.image} />
           <div className={styles.postContent}>
             <div className={styles.postInfo}>
               <span className={styles.postCategory}>

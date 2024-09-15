@@ -58,28 +58,28 @@ const Footer = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./facebook.png" alt="" height={"30px"} width={"30px"} />
+            <Image src="./facebook.png" alt="" height={"30px"} width={"30px"} />
           </a>
           <a
             href="https://www.linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./linkedin.png" alt="" height={"30px"} width={"30px"} />
+            <Image src="./linkedin.png" alt="" height={"30px"} width={"30px"} />
           </a>
           <a
             href="https://www.youtube.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./youtube.png" alt="" height={"30px"} width={"30px"} />
+            <Image src="./youtube.png" alt="" height={"30px"} width={"30px"} />
           </a>
           <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src="./instagram.png" alt="" height={"30px"} width={"30px"} />
+            <Image src="./instagram.png" alt="" height={"30px"} width={"30px"} />
           </a>
           <a
             href="https://www.github.com"
@@ -87,7 +87,7 @@ const Footer = () => {
             rel="noopener noreferrer"
           >
             {" "}
-            <img
+            <Image
               src="./github.png"
               alt=""
               height={"30px"}
