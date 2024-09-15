@@ -1,0 +1,16 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center; align-items: center;
+}
+
+.title{
+    margin-top: 20px;
+    text-align: center;
+    width: 100%;
+    border-bottom: 2px solid skyblue;
+    background: rgba(238, 130, 238, 0.493);
+    height: 70px;
+    align-content: center;
+    text-transform: capitalize;
+}

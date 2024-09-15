@@ -1,0 +1,102 @@
+/* searchbar.module.css */
+
+/* Container for the form */
+.form {
+  display: flex;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* Styling for the input field */
+.input {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #0070f3;
+}
+
+/* Styling for the submit button */
+.button {
+  padding: 10px 20px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 4px;
+  background-color: #0070f3;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #005bb5;
+}
+
+/* Container for the search results */
+.searchResult {
+  position: absolute;
+ width: 20%;
+  left: 71%;
+  right: 0;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-top: none;
+  border-radius: 0 0 4px 4px;
+  max-height: 300px;
+  overflow-y: auto;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 9999; 
+  padding: 5px;
+}
+
+/* Styling for the search results list */
+.searchResult ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.searchResult li {
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.searchResult li:last-child {
+  border-bottom: none;
+}
+
+.searchResult a {
+  text-decoration: none;
+  color: #0070f3;
+}
+
+.searchResult a:hover {
+  text-decoration: underline;
+}
+
+.noResults{
+  position: absolute;
+  width: 20%;
+   left: 71%;
+   right: 0;
+   color: red;
+   background-color: #fff;
+   border: 1px solid #ddd;
+   border-top: none;
+   border-radius: 0 0 4px 4px;
+   max-height: 300px;
+   overflow-y: auto;
+   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+   z-index: 9999; 
+   padding: 5px;
+}

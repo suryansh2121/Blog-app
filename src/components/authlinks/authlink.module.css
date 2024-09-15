@@ -3,3 +3,11 @@
     margin-right: 5px;
     margin-left: 20px;
 }
+.authenticated{
+display: flex;
+gap: 5px;
+}
+
+.welcome{
+    padding-right: 10px;
+}

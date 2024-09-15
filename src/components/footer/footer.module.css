@@ -24,6 +24,7 @@
   align-items: center;
   gap: 20px;
   justify-content: center;
+  width: 85px;
 }
 .logo{
   display: flex;
@@ -54,7 +55,7 @@
   margin: 10px;
 }
 
-.about,
+
 .links{
 display: flex;
 flex-direction: column;
@@ -94,5 +95,8 @@ font-size: 12px;
   }
   .links{
     gap: 15px;
+  }
+  .logo{
+    font-size: 35px;
   }
 }

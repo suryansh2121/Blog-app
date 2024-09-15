@@ -5,7 +5,7 @@
     margin: 15px 40px;
 }
 
-.btn{
+.button{
     padding:10px 25px;
     color: white;
     background: rgba(1, 150, 1, 0.562);
@@ -17,8 +17,19 @@
     font-weight: bold;
     font-size: 16px;
 }
+.button:disabled{
+    color: rgb(227, 217, 238);
+    cursor: not-allowed;
+}
 
-.btn:hover {
+.button:hover {
     transform: scale(1.05);
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  @media screen and (max-width:480px) {
+    .button{
+        padding: 5px 15px;
+        font-size: 12px;
+    }
   }

@@ -1,0 +1,164 @@
+/* Main container styling */
+.container {
+  margin: 0 auto;
+  padding: 30px;
+  background: radial-gradient(white, rgba(128, 0, 128, 0.349));
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  font-family: "Roboto", sans-serif;
+}
+
+/* Info section */
+.infoContainer {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
+  justify-content: space-between;
+  gap: 150px;
+  text-align: center;
+  width: 40%;
+}
+
+/* Title styling */
+.title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+/* User section styling */
+.user {
+  display: flex;
+  align-items: center;
+  gap: 15px;margin-top: 150px;
+  justify-content: center;
+  
+  
+  
+}
+
+.userImageContainer {
+  width: 50px;
+  height: 50px;
+  position: relative;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.avatar {
+  object-fit: cover;
+}
+.userTextContainer {
+  text-align: left;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 0, 10px;
+  gap: 50px;
+}
+
+.username {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #0073e6;
+  margin-right: 15px; /* Adds gap between username and date */
+}
+
+.date {
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Image section */
+.imageContainer {
+  width: 50%;
+  height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: 40px;
+}
+
+.image {
+  transition: transform 0.3s ease;
+}
+
+.imageContainer:hover .image {
+  transform: scale(1.05);
+}
+
+/* Content section */
+.content {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.post {
+  display: flex;
+  gap: 10px;
+  width: auto;
+}
+
+.description {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #555;
+  margin-bottom: 30px;
+  width: 70%;
+}
+
+.comment {
+  display: flex;
+  flex: 1;
+  width: 100px;
+  
+  padding: 20px;
+  background-color: #f1f1f1;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.menu {
+  flex: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .imageContainer {
+    height: 300px;
+  }
+
+  .title {
+    font-size: 2rem;
+  }
+
+  .description {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .imageContainer {
+    height: 250px;
+  }
+}

@@ -19,3 +19,11 @@ a{
   min-height: 100vh;
   background-color: var(--bg);
 }
+
+.ql-container{
+  font-size: 30px !important;
+
+}
+.quill> .ql-container> .ql-editor.ql-blank::before{
+  color: #b3b3b1;
+}

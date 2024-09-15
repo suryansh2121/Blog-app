@@ -26,11 +26,48 @@ const Menu = () => {
         
         <div className={styles.socialLinks}>
         <div className={styles.social}>
-          <img src="./facebook.png" alt="" height={"30px"} width={"30px"}/>
-          <img src="./instagram.png" alt="" height={"30px"} width={"30px"} />
-          <img src="./linkedin.png" alt="" height={"30px"} width={"30px"}/>
-          <img src="./youtube.png" alt=""height={"30px"} width={"30px"} />
-          <img src="./github.png" alt=""height={"30px"} width={"30px"} className={styles.github} />
+        <Link
+            href="https://www.facebook.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./facebook.png" alt="" height={"30px"} width={"30px"} />
+          </Link>
+          <Link
+            href="https://www.linkedin.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./linkedin.png" alt="" height={"30px"} width={"30px"} />
+          </Link>
+          <Link
+            href="https://www.youtube.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./youtube.png" alt="" height={"30px"} width={"30px"} />
+          </Link>
+          <Link
+            href="https://www.instagram.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img src="./instagram.png" alt="" height={"30px"} width={"30px"} />
+          </Link>
+          <Link
+            href="https://www.github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {" "}
+            <img
+              src="./github.png"
+              alt=""
+              height={"30px"}
+              width={"30px"}
+              className={styles.github}
+            />
+          </Link>
         </div>
         </div>
       </div>

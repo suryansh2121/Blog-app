@@ -1,0 +1,100 @@
+/* Container for each card */
+.container {
+  position: relative;
+  width: 40%; /* Takes full width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+  font-size: 15px;
+  overflow: hidden;
+  height: 50%;
+}
+
+.container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(96, 60, 196, 0.863);
+}
+
+/* Image container for handling Next.js Image component */
+.imageContainer {
+  width: 100%;
+  height: 100%; /* Fixed height for uniform card image */
+  position: relative;
+  overflow: hidden;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures image fits without distortion */
+  display: block;
+}
+
+/* Text container over the image with absolute positioning */
+.textContainer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  color: white;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.932) 100%);
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+/* Title styling */
+.title {
+  font-size: 1.4em;
+  margin: 0;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 10px;
+  transition: color 0.3s ease;
+}
+
+.title:hover {
+  color: #ffcc00;
+}
+
+/* Detail styling (category and date) */
+.detail {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;justify-content: space-between;
+}
+
+/* Category badge styling */
+.category {
+  background-color: #ffcc00;
+  color: #333;
+  margin-right: 10px;
+  text-transform: capitalize;
+  padding: 5px 10px;
+  border-radius: 3px;
+  margin-right: 10px;
+}
+
+/* Date styling */
+.date {
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Description styling */
+.desc {
+  margin: 10px 0;
+  font-size: 14px;
+  color: rgb(170, 60, 60);
+  display: none; /* Hidden in this layout */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    margin-bottom: 20px;
+    height: 20%;
+  }
+}
