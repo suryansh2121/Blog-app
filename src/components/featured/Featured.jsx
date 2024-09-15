@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./featured.module.css";
 import Card from "../card/Card";
+import Image from "next/image";
 
 const getData = async (page, cat) => {
   const res = await fetch(

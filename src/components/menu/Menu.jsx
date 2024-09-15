@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./menu.module.css";
 import Link from "next/link";
 import PostList from "./PostList";
+import Image from "next/image";
 
 const Menu = () => {
   return (
