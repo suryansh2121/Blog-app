@@ -36,28 +36,29 @@ const Navbar = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="./facebook.png" alt="" height={"30px"} width={"30px"} />
+           <Image src="/facebook.png" width={30} height={30} alt="Facebook" />
+
           </a>
           <a
             href="https://www.linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="./linkedin.png" alt="" height={"30px"} width={"30px"} />
+            <Image src="/linkedin.png" alt="" height={30} width={30} />
           </a>
           <a
             href="https://www.youtube.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="./youtube.png" alt="" height={"30px"} width={"30px"} />
+            <Image src="/youtube.png" alt="" height={30} width={30} />
           </a>
           <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="./instagram.png" alt="" height={"30px"} width={"30px"} />
+            <Image src="/instagram.png" alt="" height={30} width={30} />
           </a>
           <a
             href="https://www.github.com"
@@ -66,10 +67,10 @@ const Navbar = () => {
           >
             {" "}
             <Image
-              src="./github.png"
+              src="/github.png"
               alt=""
-              height={"30px"}
-              width={"30px"}
+              height={30}
+              width={30}
               className={styles.github}
             />
           </a>

@@ -1,19 +1,16 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import styles from "./write.module.css";
-import { useEffect, useState } from "react";
-import "react-quill/dist/quill.bubble.css";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
-import {
-  getStorage,
-  ref,
-  uploadBytesResumable,
-  getDownloadURL,
-} from "firebase/storage";
+import { getStorage, ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { app } from "@/utils/firebase";
-import ReactQuill from "react-quill";
+import dynamic from "next/dynamic";
+
+const ReactQuill = dynamic(() => import("react-quill"), { ssr: false });
+import "react-quill/dist/quill.bubble.css";
 
 const WritePage = () => {
   const { status } = useSession();
@@ -27,8 +24,8 @@ const WritePage = () => {
   const [catSlug, setCatSlug] = useState("");
 
   useEffect(() => {
-    const storage = getStorage(app);
-    const upload = () => {
+    if (file) {
+      const storage = getStorage(app);
       const name = new Date().getTime() + file.name;
       const storageRef = ref(storage, name);
 
@@ -37,37 +34,26 @@ const WritePage = () => {
       uploadTask.on(
         "state_changed",
         (snapshot) => {
-          const progress =
-            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+          const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
           console.log("Upload is " + progress + "% done");
-          switch (snapshot.state) {
-            case "paused":
-              console.log("Upload is paused");
-              break;
-            case "running":
-              console.log("Upload is running");
-              break;
-          }
         },
-        (error) => {},
+        (error) => {
+          console.error("Upload failed", error);
+        },
         () => {
           getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
             setMedia(downloadURL);
           });
         }
       );
-    };
-
-    file && upload();
+    }
   }, [file]);
 
-  if (status === "loading") {
-    return <div className={styles.loading}>Loading...</div>;
-  }
-
-  if (status === "unauthenticated") {
-    router.push("/");
-  }
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      router.push("/");
+    }
+  }, [status, router]);
 
   const slugify = (str) =>
     str
@@ -85,7 +71,7 @@ const WritePage = () => {
         desc: value,
         img: media,
         slug: slugify(title),
-        catSlug: catSlug || "style", //If not selected, choose the general category
+        catSlug: catSlug || "style",
       }),
     });
 
@@ -94,6 +80,10 @@ const WritePage = () => {
       router.push(`/posts/${data.slug}`);
     }
   };
+
+  if (status === "loading") {
+    return <div className={styles.loading}>Loading...</div>;
+  }
 
   return (
     <div className={styles.container}>
@@ -107,24 +97,12 @@ const WritePage = () => {
         className={styles.select}
         onChange={(e) => setCatSlug(e.target.value)}
       >
-        <option className={styles.elements} value="business">
-          business
-        </option>
-        <option className={styles.elements} value="fashion">
-          fashion
-        </option>
-        <option className={styles.elements} value="food">
-          food
-        </option>
-        <option className={styles.elements} value="culture">
-          culture
-        </option>
-        <option className={styles.elements} value="travel">
-          travel
-        </option>
-        <option className={styles.elements} value="coding">
-          coding
-        </option>
+        <option className={styles.elements} value="business">business</option>
+        <option className={styles.elements} value="fashion">fashion</option>
+        <option className={styles.elements} value="food">food</option>
+        <option className={styles.elements} value="culture">culture</option>
+        <option className={styles.elements} value="travel">travel</option>
+        <option className={styles.elements} value="coding">coding</option>
       </select>
       <div className={styles.editor}>
         <button className={styles.button} onClick={() => setOpen(!open)}>

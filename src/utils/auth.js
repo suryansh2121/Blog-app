@@ -1,7 +1,7 @@
 import { PrismaAdapter } from "@auth/prisma-adapter";
 import GithubProvider from "next-auth/providers/github";
 import GoogleProvider from "next-auth/providers/google";
-import prisma from "./connect";
+import prisma from "./connect"; // Adjust the import path if necessary
 import { getServerSession } from "next-auth";
 
 export const authOptions = {
@@ -18,42 +18,48 @@ export const authOptions = {
   ],
   callbacks: {
     async signIn({ user, account }) {
-      // Check if user already exists based on their email
-      const existingUser = await prisma.user.findUnique({
-        where: { email: user.email },
-      });
+      try {
+        console.log('User:', user);
+        console.log('Account:', account);
 
-      if (existingUser) {
-        // Check if the OAuth account is already linked
-        const linkedAccount = await prisma.account.findFirst({
-          where: {
-            userId: existingUser.id,
-            provider: account.provider,
-            providerAccountId: account.providerAccountId,
-          },
+        const existingUser = await prisma.user.findUnique({
+          where: { email: user.email },
         });
 
-        if (!linkedAccount) {
-          // Link the new OAuth account to the existing user
-          await prisma.account.create({
-            data: {
+        if (existingUser) {
+          console.log('Existing user found:', existingUser);
+
+          const linkedAccount = await prisma.account.findFirst({
+            where: {
               userId: existingUser.id,
               provider: account.provider,
               providerAccountId: account.providerAccountId,
-              access_token: account.access_token,
-              refresh_token: account.refresh_token,
             },
           });
-        }
-        
-        return true; // Allow sign-in
-      }
 
-      return true; // Proceed with the sign-in for new users
+          if (!linkedAccount) {
+            await prisma.account.create({
+              data: {
+                userId: existingUser.id,
+                provider: account.provider,
+                providerAccountId: account.providerAccountId,
+                access_token: account.access_token,
+                refresh_token: account.refresh_token,
+              },
+            });
+          }
+
+          return true;
+        }
+
+        console.log('New user sign-in:', user);
+        return true;
+      } catch (error) {
+        console.error('Sign-in error:', error);
+        return false;
+      }
     },
-    
     async session({ session, user }) {
-      // Add user ID to the session object for later use
       session.user.id = user.id;
       return session;
     },
