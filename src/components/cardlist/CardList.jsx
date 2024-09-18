@@ -3,11 +3,12 @@ import styles from "./cardlist.module.css";
 import Pagination from "../pagination/Pagination";
 import Image from "next/image";
 import Card from "../card/Card";
+import { apiUrl } from "@/utils/config";
 
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    `http://localhost:3000/api/posts?page=${page}&cat=${cat || ""}`,
+    `${apiUrl}api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }

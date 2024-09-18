@@ -1,9 +1,10 @@
 import React from "react";
 import styles from "./catagorylist.module.css";
 import Link from "next/link";
+import { apiUrl } from "@/utils/config";
 
 const getData = async () => {
-  const res = await fetch("http://localhost:3000/api/categories", {
+  const res = await fetch(`${apiUrl}/api/categories`, {
     cache: "no-store",
   });
   if (!res.ok) {
