@@ -8,7 +8,7 @@ import { apiUrl } from "@/utils/config";
 
 const getData = async (page, cat) => {
   const res = await fetch(
-    `${apiUrl}api/posts?page=${page}&cat=${cat || ""}`,
+    `${apiUrl}/api/posts?page=${page}&cat=${cat || ""}`,
     {
       cache: "no-store",
     }
