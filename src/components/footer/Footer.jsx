@@ -52,7 +52,7 @@ const Footer = () => {
           <p>Email: rajputsuryansh491@gmail.com</p>
           <p>Phone: +91 9555074132</p>
         </div>
-        <p>&copy; 2024 Your Company. All rights reserved.</p>
+        <p>&copy; 2024 Suryansh. All rights reserved.</p>
         <div className={styles.socialMedia}>
         <a
             href="https://www.facebook.com"
