@@ -2,7 +2,7 @@
 .container {
   margin: 0 auto;
   padding: 30px;
-  background: radial-gradient(white, rgba(128, 0, 128, 0.349));
+  background: radial-gradient(white, rgba(128, 0, 128, 0.26));
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   font-family: "Roboto", sans-serif;
@@ -160,5 +160,60 @@
 
   .imageContainer {
     height: 250px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .description {
+    font-size: 0.85rem;
+    width: 100%;
+  }
+
+  .imageContainer {
+    height: 270px;
+    width: 100%;
+  }
+
+  .infoContainer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+  }
+
+  .textContainer {
+    gap: 30px;
+    width: 100%;
+  }
+
+  .user {
+    flex-direction: column;
+    margin-top: 20px;
+  }
+
+  .userTextContainer {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+
+  .content {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .post{
+    flex-direction: column;
+  }
+  .comment{
+    width: 100%;
   }
 }
