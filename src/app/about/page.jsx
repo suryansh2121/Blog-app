@@ -7,9 +7,7 @@ const About = () => {
     <section className={styles.aboutContainer}>
       <div className={styles.container}>
         <div className={styles.profile}>
-          <div className={styles.image}>
-            <Image src="your-profile-pic.jpg" alt="Suryansh's Profile" />
-          </div>
+          
           <div className={styles.info}>
             <h1 className={styles.title}>About Suryansh</h1>
             <p className={styles.text}>
