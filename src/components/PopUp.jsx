@@ -15,7 +15,7 @@ const Popup = () => {
       <div style={styles.popup}>
         <h2 style={styles.heading}>🚧 Under Construction 🚧</h2>
         <p style={styles.text}>
-          Hey, this is <strong>Suryansh</strong>. I'm the Owner and Developer of this site.
+          Hey, this is <strong>Suryansh</strong>. I&apos;m the Owner and Developer of this site.
           <br />
           I sincerely apologize for the inconvenience – this site is currently
           under construction. <br />

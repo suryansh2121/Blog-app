@@ -10,7 +10,7 @@ const About = () => {
           <div className={styles.info}>
             <h1 className={styles.title}>About Suryansh</h1>
             <p className={styles.text}>
-              Hello! I'm <span className={styles.logo}>Suryansh</span>, a
+              Hello! I&apos;m <span className={styles.logo}>Suryansh</span>, a
               dedicated{" "}
               <span className={styles.about}>Full Stack Software Engineer</span>{" "}
               with a passion for Problem-Solving, crafting responsive and
