@@ -3,6 +3,7 @@ import "./globals.css";
 import Footer from "@/components/footer/Footer";
 import Navbar from "@/components/navbar/Navbar";
 import AuthProvider from "@/providers/AuthProvider";
+import Popup from "@/components/PopUp";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,6 +19,7 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <div className="container">
             <Navbar />
+            <Popup/>
             {children}
             <Footer />
           </div>

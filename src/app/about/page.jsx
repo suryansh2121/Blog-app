@@ -1,35 +1,55 @@
 import React from "react";
 import Image from "next/image";
-import styles from "./about.module.css"// Import the CSS file
+import styles from "./about.module.css";
 
 const About = () => {
   return (
     <section className={styles.aboutContainer}>
       <div className={styles.container}>
         <div className={styles.profile}>
-          
           <div className={styles.info}>
             <h1 className={styles.title}>About Suryansh</h1>
             <p className={styles.text}>
-              Hello! I am <span className={styles.logo}>Suryansh</span>, a passionate <span className={styles.about}>Full Stack Developer</span> with a background in Computer Science.
+              Hello! I'm <span className={styles.logo}>Suryansh</span>, a
+              dedicated{" "}
+              <span className={styles.about}>Full Stack Software Engineer</span>{" "}
+              with a passion for Problem-Solving, crafting responsive and
+              high-performance web Solutions using the Appropriate Tech stack.
             </p>
             <p className={styles.content}>
-              I graduated with B.Tech in Computer Science, with a deep interest in building high-quality web applications that are both scalable and efficient.
+              I’ve worked as a Frontend Developer Intern at The Entrepreneurship
+              Network, where I contributed to optimizing performance and
+              enhancing user experience. I am particularly proud of improving
+              loading speeds by 25% and implementing key UI features like
+              carousels, animations, and responsive layouts.
             </p>
-            <div className={styles.education}>
-              <h2 className={styles.educatio}>Education</h2>
-              <p className={styles.graduation}>B.Tech in Computer Science</p>
-              </div>
-              <div className={styles.skills}>
-                <h2>Expertise</h2>
-                <ul className={styles.list} >
-                  <li className={styles.item}>REACT</li>
-                  <li className={styles.item}>MONGODB</li>
-                  <li className={styles.item}>EXPRESSJS</li>
-                  <li className={styles.item}>NEXTJS</li>
-                  <li className={styles.item}>NODEJS</li>
-                </ul>
-              </div>
+            
+            <div className={styles.skills}>
+              <h2>Technical Skills</h2>
+              <ul className={styles.list}>
+                <li className={styles.item}>JavaScript, Python, C</li>
+                <li className={styles.item}>React, Redux, Next.js</li>
+                <li className={styles.item}>Node.js, Express.js</li>
+                <li className={styles.item}>MongoDB, PostgreSQL, Supabase</li>
+                <li className={styles.item}>Tailwind CSS, CSS Modules</li>
+                <li className={styles.item}>Firebase, NextAuth.js, JWT</li>
+                <li className={styles.item}>Git, GitHub, Vercel, Heroku</li>
+              </ul>
+            </div>
+            <div className={styles.skills}>
+              <h2>Soft Skills</h2>
+              <ul className={styles.list}>
+                <li className={styles.item}>Problem Solving & Debugging</li>
+                <li className={styles.item}>
+                  Attention to Detail & Creativity
+                </li>
+                <li className={styles.item}>Effective Communication</li>
+                <li className={styles.item}>Team Collaboration</li>
+                <li className={styles.item}>
+                  Critical Thinking & Adaptability
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
