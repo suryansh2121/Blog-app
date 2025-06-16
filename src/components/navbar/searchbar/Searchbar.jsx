@@ -1,17 +1,19 @@
 "use client";
-import Link from 'next/link';
-import { useState } from 'react';
+import { FiSearch } from "react-icons/fi";
+
+import { useState } from "react";
 import styles from "./searchbar.module.css";
 
 const SearchBar = ({ onSearch, results }) => {
-  const [query, setQuery] = useState('');
+  const [query, setQuery] = useState("");
+  const [expanded, setExpanded] = useState(false);
 
   const handleChange = (e) => {
     setQuery(e.target.value);
     if (e.target.value.trim()) {
       onSearch(e.target.value);
     } else {
-      onSearch(''); // Clear results if query is empty
+      onSearch("");
     }
   };
 
@@ -19,34 +21,40 @@ const SearchBar = ({ onSearch, results }) => {
     e.preventDefault();
     if (query.trim()) {
       onSearch(query);
+      setQuery(""); 
+      setExpanded(false);
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit} className={styles.form}>
-        <input 
+    <div className={styles.container}>
+      <form
+        className={`${styles.form} ${expanded ? styles.expanded : ""}`}
+        onSubmit={handleSubmit}
+      >
+        <input
+          type="text"
           className={styles.input}
-          type="text" 
-          placeholder="Search for posts..." 
-          value={query} 
-          onChange={handleChange} 
+          placeholder="Search..."
+          value={query}
+          onChange={handleChange}
+          onFocus={() => setExpanded(true)}
         />
-        <button className={styles.button} type="submit">Search</button>
+        <button
+          type="submit"
+          className={styles.button}
+          onClick={() => setExpanded(!expanded)}
+        >
+         <FiSearch/>
+        </button>
       </form>
 
-      {query && results.length === 0 && (
-        <div className={styles.noResults}>
-          Post not found
-        </div>
-      )}
-
-      {results.length > 0 && (
+      {expanded && results?.length > 0 && (
         <div className={styles.searchResult}>
           <ul>
-            {results.map(post => (
+            {results.map((post) => (
               <li key={post.id}>
-                <Link href={`/posts/${post.slug}`}>{post.title}</Link>
+                <a href={`/posts/${post.slug}`}>{post.title}</a>
               </li>
             ))}
           </ul>

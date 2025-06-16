@@ -8,57 +8,56 @@ import Burger from "../burger/Burger";
 import SearchBar from "./searchbar/Searchbar";
 
 const Navbar = () => {
-  const [posts, setPosts] = useState([]);  // Store search results
+  const [posts, setPosts] = useState([]); 
 
-  // Define the handleSearch function to fetch search results
+ 
   const handleSearch = async (query) => {
     if (query.trim()) {
       try {
         const res = await fetch(`/api/search?query=${query}`);
         if (!res.ok) throw new Error("Failed to fetch search results");
         const data = await res.json();
-        setPosts(data);  // Update state with search results
+        setPosts(data); 
       } catch (error) {
         console.error("Error fetching search results:", error);
       }
     } else {
-      setPosts([]);  // Clear results if query is empty
+      setPosts([]); 
     }
   };
 
   return (
     <div className={styles.container}>
-      {/* Social Links and Auth Links */}
+      
       <div className={styles.nav1}>
         <div className={styles.social}>
-        <a
+          <a
             href="https://www.facebook.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-           <Image src="/facebook.png" width={30} height={30} alt="Facebook" />
-
+            <Image src="/facebook.png" width={20} height={20} alt="Facebook" />
           </a>
           <a
             href="https://www.linkedin.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="/linkedin.png" alt="" height={30} width={30} />
+            <Image src="/linkedin.png" alt="" height={20} width={20} />
           </a>
           <a
             href="https://www.youtube.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="/youtube.png" alt="" height={30} width={30} />
+            <Image src="/youtube.png" alt="" height={20} width={20} />
           </a>
           <a
             href="https://www.instagram.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <Image src="/instagram.png" alt="" height={30} width={30} />
+            <Image src="/instagram.png" alt="" height={20} width={20} />
           </a>
           <a
             href="https://www.github.com"
@@ -69,8 +68,8 @@ const Navbar = () => {
             <Image
               src="/github.png"
               alt=""
-              height={30}
-              width={30}
+              height={20}
+              width={20}
               className={styles.github}
             />
           </a>
@@ -80,7 +79,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Logo and Burger Menu */}
       <div className={styles.logo}>
         <div>
           <span>SURY</span>ANSH
@@ -90,7 +88,6 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Navigation Links and SearchBar */}
       <div className={styles.nav3}>
         <div className={styles.links}>
           <Link href="/">Home</Link>
@@ -98,7 +95,6 @@ const Navbar = () => {
           <Link href="/contact">Contact</Link>
         </div>
 
-        {/* Search Bar Component */}
         <SearchBar onSearch={handleSearch} results={posts} />
       </div>
     </div>

@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-   "build": "prisma generate && next build",
+    "build": "prisma generate && next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -15,18 +15,19 @@
     "firebase": "^10.13.1",
     "next": "14.2.5",
     "next-auth": "^4.24.7",
+    "prisma": "^5.19.1",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "react-icon": "^1.0.0",
+    "react-icons": "^5.5.0",
     "react-quill": "^2.0.0",
     "react-slick": "^0.30.2",
     "sharp": "^0.33.5",
     "slick-carousel": "^1.8.1",
-    "swr": "^2.2.5",
-    "prisma": "^5.19.1"
+    "swr": "^2.2.5"
   },
   "devDependencies": {
     "eslint": "^8",
     "eslint-config-next": "14.2.5"
-    
   }
 }
