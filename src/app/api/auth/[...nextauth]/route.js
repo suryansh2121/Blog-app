@@ -1,4 +1,3 @@
-// Correct version
 import NextAuth from 'next-auth';
 import { authOptions } from '@/utils/auth';
 
