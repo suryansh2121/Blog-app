@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata = {
   title: "suryansh Blog-app",
   description: "Blog App",
+  verification: {
+    google: "heUjolZgSJid2IkDpMF7WdNWJMnSwMp_AfDUzKo4kSs",
+  },
 };
 
 export default function RootLayout({ children }) {
@@ -18,7 +21,6 @@ export default function RootLayout({ children }) {
         <AuthProvider>
           <div className="container">
             <Navbar />
-            
             {children}
             <Footer />
           </div>
